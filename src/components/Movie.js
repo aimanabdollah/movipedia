@@ -65,19 +65,15 @@ const Movie = (props) => {
     let movieGenre = [];
     genres.forEach((genre) => {
       if (props.movie.genre_ids.includes(genre.id)) {
-        movieGenre.push(genre.name);
+        movieGenre.push(
+          <span key={genre.id} className="badge bg-success me-1">
+            {genre.name}
+          </span>
+        );
       }
     });
 
-    return (
-      <div>
-        {movieGenre.map((genre) => (
-          <span key={genre.toString()} className="badge bg-success me-1">
-            {genre}
-          </span>
-        ))}
-      </div>
-    );
+    return movieGenre;
   };
 
   return (
