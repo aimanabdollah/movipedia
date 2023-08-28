@@ -6,8 +6,8 @@ const Footer = () => {
           <div className="col text-center">
             <p className="lead mb-0">MoviPedia</p>
             <p>
-              All data provided by themoviedb.org API ©{" "}
-              {new Date().getFullYear()} All Rights Reserved
+              All data provided by The Movie Database (TMDb) API © {""}{" "}
+              {new Date().getFullYear()} All Rights Reserved | Aiman Abdollah
             </p>
           </div>
         </div>

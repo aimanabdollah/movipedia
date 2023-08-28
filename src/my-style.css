@@ -1,19 +1,19 @@
 /* Agar container tidak terlalu lebar */
 @media (min-width: 1200px) {
   .container {
-  max-width: 1140px !important;
+    max-width: 1140px !important;
   }
 }
 
 header {
-  background-image: linear-gradient(rgb(0 0 0 / 71%), rgb(2 13 24)), 
-                    url("./img/bg-header.jpg");
+  background-image: linear-gradient(rgb(0 0 0 / 71%), rgb(2 13 24)),
+    url("./img/bg-header.jpg");
   height: 250px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 }
 
@@ -27,9 +27,8 @@ nav {
 }
 
 footer {
-  background-color:#0f1c27;
+  background-color: #0f1c27;
 }
-
 
 /* ================== */
 /*   movie-container  */
@@ -40,15 +39,15 @@ footer {
   cursor: pointer;
 }
 
-.movie-container img{
+.movie-container img {
   transition: filter 0.3s ease-in-out;
 }
 
-.movie-container:hover img{
-  filter:brightness(50%);
+.movie-container:hover img {
+  filter: brightness(50%);
 }
 
-.badge.vote{
+.badge.vote {
   position: absolute;
   top: 3%;
   right: 9%;
@@ -71,16 +70,49 @@ footer {
   transition: all 0.3s ease-in-out 0s;
 }
 
-.movie-container:hover .movie-info{
+.movie-container:hover .movie-info {
   opacity: 1;
 }
 
-.movie-info h2{
+.movie-info h2 {
   font-size: 1.5rem;
   margin-bottom: 0;
 }
 
+/* Styles for smaller screens */
+@media (max-width: 767px) {
+  .movie-info h2 {
+    font-size: 1.2rem; /* Adjust the font size as needed */
+  }
+
+  .btn-outline-primary {
+    font-size: 0.8rem;
+    background-color: #0d6efd;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .btn-outline-primary:hover {
+    font-size: 0.8rem;
+    background-color: white;
+    color: #0d6efd;
+  }
+}
+
+.btn-outline-primary {
+  font-weight: bold;
+  background-color: #0d6efd;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-primary:hover {
+  font-weight: bold;
+  background-color: white;
+  color: #0d6efd;
+}
+
 .movie-info .overview {
-  text-align:left;
+  text-align: left;
   padding: 0 0.2rem;
 }

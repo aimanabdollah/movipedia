@@ -85,7 +85,9 @@ const Movie = (props) => {
         alt={props.movie.title}
         className="w-100 img-thumbnail"
       ></img>
-      <span className="badge bg-danger vote">{props.movie.vote_average}</span>
+      <span className="badge bg-warning text-dark vote">
+        {props.movie.vote_average}
+      </span>
 
       <div className="movie-info">
         <h2>{getTitle()}</h2>
@@ -93,17 +95,15 @@ const Movie = (props) => {
         <p className="genre">{getGenre()}</p>
         <p className="overview d-none d-lg-block">{getOverview()}</p>
 
-        <p>
-          <span className="badge bg-warning pill-badge">
-            <a
-              href={`https://www.themoviedb.org/movie/${getId()}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black text-decoration-none px-2 py-1 rounded-pill p-2"
-            >
-              View More Detail
-            </a>
-          </span>
+        <p className="d-none d-sm-block">
+          <a
+            href={`https://www.themoviedb.org/movie/${getId()}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline-primary btn-sm rounded-pill px-3 py-1"
+          >
+            View More Detail
+          </a>
         </p>
       </div>
     </div>

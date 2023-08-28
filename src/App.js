@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Movie from "./components/Movie";
+import MainContent from "./components/MainContent";
+import Navigation from "./components/Navigation";
 
 // Generate genre
 const genres = [
@@ -30,7 +31,7 @@ const genres = [
 // Generate year
 let years = [];
 const thisYear = new Date().getFullYear();
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 50; i++) {
   years.push(thisYear - i);
 }
 
@@ -77,7 +78,7 @@ const App = () => {
 
         let response = await fetch(url);
         if (!response.ok) {
-          throw new Error(`Terjadi gangguan dengan kode: ${response.status}`);
+          throw new Error(`Opps, the error occur: ${response.status}`);
         }
         let data = await response.json();
 
@@ -98,73 +99,21 @@ const App = () => {
   return (
     <React.Fragment>
       <Header />
+      <Navigation
+        years={years}
+        year={year}
+        handleYearChange={handleYearChange}
+        genres={genres}
+        genreId={genreId}
+        handleGenreChange={handleGenreChange}
+      />
 
-      <nav>
-        <div className="container text-white">
-          <div className="row">
-            <div className="col d-none d-md-flex align-items-center">
-              <hr className="flex-grow-1 me-3" />
-              <small>powered by themoviedb.org</small>
-            </div>
-            <div className="col col-md-3 d-flex">
-              <div className="me-3">
-                <label htmlFor="year" className="form-label">
-                  Year
-                </label>
-                <select
-                  className="form-select"
-                  onChange={handleYearChange}
-                  value={year}
-                  id="year"
-                >
-                  {years.map((year) => (
-                    <option key={year.toString()} value={year}>
-                      {year}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="genre" className="form-label">
-                  Genre
-                </label>
-                <select
-                  className="form-select"
-                  onChange={handleGenreChange}
-                  value={genreId}
-                  id="genre"
-                >
-                  {genres.map((genre) => (
-                    <option key={genre.id} value={genre.id}>
-                      {genre.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <main className="pb-5">
-        <div className="container">
-          <h2 className="py-5 text-white text-center">
-            {`Best Movie ${year}, Genre: ${genreName}`}
-          </h2>
-          <div className="row">
-            {movies.map((movie) => (
-              <Movie key={movie.id} movie={movie} />
-            ))}
-          </div>
-          <div className="row">
-            <div className="col text-center">
-              <button className="btn btn-dark" onClick={handleLoadMoreClick}>
-                Load More...
-              </button>
-            </div>
-          </div>
-        </div>
-      </main>
+      <MainContent
+        movies={movies}
+        year={year}
+        genreName={genreName}
+        handleLoadMoreClick={handleLoadMoreClick}
+      />
 
       <Footer />
     </React.Fragment>
