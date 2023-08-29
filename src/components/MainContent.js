@@ -12,55 +12,6 @@ const MainContent = ({ movies, year, genreName, handleLoadMoreClick }) => {
     setSearchQuery(event.target.value);
   };
 
-  const renderSearchForm = (
-    <div className="col-md-6 offset-md-3">
-      <form>
-        <div className="input-group py-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search movies..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-          <button className="btn btn-outline-primary" type="button">
-            Search
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-
-  const renderNoSearchResults = (
-    <div className="col text-center">
-      <img
-        src="/no-found-img.png"
-        alt="No search found"
-        className="img-fluid"
-        style={{ maxWidth: "300px" }}
-      />
-      <h5 className="text-white">Oops! No search results found.</h5>
-    </div>
-  );
-
-  const renderMovies = (
-    <div className="row">
-      {filteredMovies.map((movie) => (
-        <Movie key={movie.id} movie={movie} />
-      ))}
-    </div>
-  );
-
-  const renderLoadMoreButton = filteredMovies.length > 12 && (
-    <div className="row">
-      <div className="col text-center">
-        <button className="btn btn-dark" onClick={handleLoadMoreClick}>
-          Load More...
-        </button>
-      </div>
-    </div>
-  );
-
   return (
     <main className="pb-5">
       <div className="container">
@@ -69,15 +20,54 @@ const MainContent = ({ movies, year, genreName, handleLoadMoreClick }) => {
         </h2>
 
         {/* Search Form */}
-        <div className="row mb-3">{renderSearchForm}</div>
+        <div className="row mb-3">
+          <div className="col-md-6 offset-md-3">
+            <form>
+              <div className="input-group py-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search movies..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                />
+                <button className="btn btn-outline-primary" type="button">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
 
         {/* Display Filtered Movies or "No search found" */}
         <div className="row">
-          {filteredMovies.length === 0 ? renderNoSearchResults : renderMovies}
+          {filteredMovies.length === 0 ? (
+            <div className="col text-center">
+              <img
+                src="/no-found-img.png"
+                alt="No search found"
+                className="img-fluid"
+                style={{ maxWidth: "300px" }}
+              />
+              <h5 className="text-white">Opps! No search results found.</h5>
+            </div>
+          ) : (
+            filteredMovies.map((movie) => (
+              <Movie key={movie.id} movie={movie} />
+            ))
+          )}
         </div>
 
         {/* "Load More..." Button */}
-        {filteredMovies.length > 0 && renderLoadMoreButton}
+        {filteredMovies.length > 0 && (
+          <div className="row">
+            <div className="col text-center">
+              <button className="btn btn-dark" onClick={handleLoadMoreClick}>
+                Load More...
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </main>
   );
