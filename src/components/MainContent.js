@@ -12,6 +12,16 @@ const MainContent = ({ movies, year, genreName, handleLoadMoreClick }) => {
     setSearchQuery(event.target.value);
   };
 
+  const renderLoadMoreButton = filteredMovies.length > 12 && (
+    <div className="row">
+      <div className="col text-center">
+        <button className="btn btn-dark" onClick={handleLoadMoreClick}>
+          Load More...
+        </button>
+      </div>
+    </div>
+  );
+
   return (
     <main className="pb-5">
       <div className="container">
@@ -59,15 +69,7 @@ const MainContent = ({ movies, year, genreName, handleLoadMoreClick }) => {
         </div>
 
         {/* "Load More..." Button */}
-        {filteredMovies.length > 0 && (
-          <div className="row">
-            <div className="col text-center">
-              <button className="btn btn-dark" onClick={handleLoadMoreClick}>
-                Load More...
-              </button>
-            </div>
-          </div>
-        )}
+        {filteredMovies.length > 0 && renderLoadMoreButton}
       </div>
     </main>
   );
