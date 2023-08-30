@@ -22,8 +22,8 @@ const Movie = (props) => {
 
   // Cut movie title if more than 17 characters
   const getTitle = () => {
-    if (props.movie.title.length >= 17) {
-      return props.movie.title.substring(0, 17) + "...";
+    if (props.movie.title.length >= 25) {
+      return props.movie.title.substring(0, 25) + "...";
     } else {
       return props.movie.title;
     }
@@ -80,31 +80,31 @@ const Movie = (props) => {
     <div className="movie-container col-6 col-md-4 col-xl-3 mb-5">
       {/* {console.log(props.movie)} */}
 
-      <img
-        src={getImage()}
-        alt={props.movie.title}
-        className="w-100 img-thumbnail"
-      ></img>
-      <span className="badge bg-warning text-dark vote">
-        {props.movie.vote_average}
-      </span>
-
-      <div className="movie-info">
-        <h2>{getTitle()}</h2>
-        <p>({getYear()})</p>
-        <p className="genre">{getGenre()}</p>
-        <p className="overview d-none d-lg-block">{getOverview()}</p>
-
-        <p className="d-none d-sm-block">
+      <div className="card movie-card h-100">
+        <img src={getImage()} alt={props.movie.title} className="p-1"></img>
+        <span className="badge bg-warning text-dark vote">
+          {props.movie.vote_average}
+        </span>
+        <div className="movie-info">
+          <h2>{getTitle()}</h2>
+          <p>{getYear()}</p>
+          <p className="genre">{getGenre()}</p>
+        </div>
+        <div className="card-body d-flex flex-column justify-content-between">
+          <div className="movie-details">
+            <h6 className="card-title">{getTitle()}</h6>
+            <h6 className="card-title">{getYear()}</h6>
+            <p className="card-text d-none d-lg-block">{getOverview()}</p>
+          </div>
           <a
             href={`https://www.themoviedb.org/movie/${getId()}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-outline-primary btn-sm rounded-pill px-3 py-1"
+            className="btn btn-outline-primary btn-sm mt-2 p-2" // Use mt-2 for top margin
           >
             View More Detail
           </a>
-        </p>
+        </div>
       </div>
     </div>
   );

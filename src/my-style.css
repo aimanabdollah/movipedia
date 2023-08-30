@@ -64,7 +64,7 @@ footer {
   text-align: center;
   padding: 0 1.5rem;
   width: 100%;
-  top: 15%;
+  top: 16%;
   left: 0;
   opacity: 0;
   transition: all 0.3s ease-in-out 0s;
@@ -81,21 +81,38 @@ footer {
 
 /* Styles for smaller screens */
 @media (max-width: 767px) {
+  .movie-info {
+    top: 9%;
+  }
   .movie-info h2 {
-    font-size: 1.2rem; /* Adjust the font size as needed */
+    font-size: 0.8rem; /* Adjust the font size as needed */
+  }
+
+  .movie-info p,
+  h6 {
+    font-size: 0.8rem; /* Adjust the font size as needed */
   }
 
   .btn-outline-primary {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    padding: 0.2rem;
     background-color: #0d6efd;
     color: white;
     transition: background-color 0.3s, color 0.3s;
   }
 
   .btn-outline-primary:hover {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    padding: 0.2rem;
     background-color: white;
     color: #0d6efd;
+  }
+
+  .badge.vote {
+    position: absolute;
+    top: 3%;
+    right: 9%;
+    font-size: 0.6rem;
   }
 }
 
@@ -115,4 +132,16 @@ footer {
 .movie-info .overview {
   text-align: left;
   padding: 0 0.2rem;
+}
+
+/* Add this CSS to your stylesheet */
+.movie-card {
+  height: 100%; /* Set a fixed height for the card */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1; /* Allow the card body to expand within the card */
+  overflow: hidden; /* Hide any overflow content */
 }

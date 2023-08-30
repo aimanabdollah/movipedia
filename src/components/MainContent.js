@@ -59,7 +59,10 @@ const MainContent = ({ movies, year, genreName, handleLoadMoreClick }) => {
                 className="img-fluid"
                 style={{ maxWidth: "300px" }}
               />
-              <h5 className="text-white">Opps! No search results found.</h5>
+              <h5 className="text-white">Oops! No search results found.</h5>
+              <h6 className="text-white">
+                Try diferent or more general keywords
+              </h6>
             </div>
           ) : (
             filteredMovies.map((movie) => (
