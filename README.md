@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+<p align="center"><a href="#" target="_blank"><img src="public/favicon.io" height="150px" width="150px"></a></p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Introduction
 
-## Available Scripts
+MoviPedia is a simple webpage for movie exploration that developed using the React framework. This page is designed for users to browse movies based on genre and year. Additionally, users can view more details of the movies, which are redirected to the TMDB website. This page was integrated with the public TMDB API to fetch real-time data, including the movie's title, release year, genre, description and rating. The development of this page served as the purpose of enhancing my familiarity with React components and gaining the knowledge about fetching data using an API.
 
-In the project directory, you can run:
+# List of Features
 
-### `npm start`
+- Browse movies by year or genre
+- Search for movies using a text input
+- Access movie details including title, release year, genre, rating and description
+- Navigate to the TMDB webpage to explore additional information such as director, writer, actor/actress list, duration and other relevant details based on the selected movie
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# System Interface
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Desktop View
 
-### `npm test`
+<table>
+  <tr>
+    <td><img src="public/screenshot/Desktop1.png"></td>
+    <td><img src="public/screenshot/Desktop2.png"></td>
+  </tr>
+ </table>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Mobile View
 
-### `npm run build`
+<table>
+  <tr>
+    <td><img src="public/screenshot/Mobile1.png"></td>
+    <td><img src="public/screenshot/Mobile2.png"></td>
+  </tr>
+ </table>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# System Testing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This page was tested using Katalon as an automation tool. There are 6 test cases representing different scenarios that were executed and all of them passed with a 100% success rate. The screenshots below show the output of the test case results
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<table>
+  <tr>
+    <td><img src="public/screenshot/test-result.png"></td>
+  </tr>
+ </table>
 
-### `npm run eject`
+# Conclusion
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In summary, MoviPedia is a simple movie exploration webpage built with React. It allows users to find movies by genre and year, providing details like titles, release years, genres, ratings and descriptions using the TMDB API. During development, I gained experience in React and data fetching via APIs. Other than that, I also able to understand on how to use Katalon as an automation tool for system testing.
