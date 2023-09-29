@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img src="public/favicon.io" height="150px" width="150px"></a></p>
+<p align="center"><a href="#" target="_blank"><img src="public/favicon.png" height="150px" width="150px"></a></p>
 
 # Introduction
 
@@ -26,14 +26,14 @@ MoviPedia is a simple webpage for movie exploration that developed using the Rea
 
 <table>
   <tr>
-    <td><img src="public/screenshot/Mobile1.png"></td>
-    <td><img src="public/screenshot/Mobile2.png"></td>
+    <td><img src="public/screenshot/Mobile1.png" width="200px"></td>
+    <td><img src="public/screenshot/Mobile2.png" width="200px"></td>
   </tr>
  </table>
 
 # System Testing
 
-This page was tested using Katalon as an automation tool. There are 6 test cases representing different scenarios that were executed and all of them passed with a 100% success rate. The screenshots below show the output of the test case results
+This page was tested using Katalon as an automation tool with record and playback approach. There are 6 test cases representing different scenarios that were executed and all of them passed with a 100% success rate. The screenshots below show the output of the test case results.
 
 <table>
   <tr>
