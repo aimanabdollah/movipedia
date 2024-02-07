@@ -83,7 +83,9 @@ const Movie = (props) => {
       <div className="card movie-card h-100">
         <img src={getImage()} alt={props.movie.title} className="p-1"></img>
         <span className="badge bg-warning text-dark vote">
-          {props.movie.vote_average}
+          {props.movie.vote_average.toFixed(1) === "0.0"
+            ? 0
+            : props.movie.vote_average.toFixed(1)}
         </span>
         <div className="movie-info">
           <h2>{getTitle()}</h2>
